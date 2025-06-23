@@ -1,0 +1,54 @@
+{
+  "articles": [
+    {
+      "username": "SophMikhael Edman P. Gomez",
+      "userProfileImageUrl": "https://i.ibb.co/Y7znzJMc/432777817-1805872079896741-4079799830112579823-n.jpg",
+      "postDate": "2025-03-12T10:15:00Z",
+      "title": "Mastering Progressive Web Apps",
+      "about": "Progressive Web Apps (PWAs) are becoming the new standard for delivering native app-like experiences on the web. In this article, we’ll explore how PWAs leverage modern web capabilities to deliver fast, reliable, and engaging user experiences.",
+      "content": "PWAs combine the best of web and mobile apps by offering offline support, push notifications, and seamless installation without needing app stores. Using Service Workers and Web App Manifests, developers can ensure that their apps work under varying network conditions. We'll look at examples of successful PWAs and best practices to optimize performance and user engagement.",
+      "favorites": 42
+    },
+    {
+      "username": "Mikhael Edman P. Gomez",
+      "userProfileImageUrl": "https://i.ibb.co/Y7znzJMc/432777817-1805872079896741-4079799830112579823-n.jpg",
+      "postDate": "2025-05-21T16:45:00Z",
+      "title": "Understanding Serverless Architectures",
+      "about": "Serverless computing abstracts away infrastructure management, letting developers focus solely on writing code. This article dives into the core concepts, advantages, and limitations of serverless architectures.",
+      "content": "By using platforms like AWS Lambda, Azure Functions, or Google Cloud Functions, developers can run code on-demand without provisioning or managing servers. This leads to cost efficiency, automatic scaling, and quicker deployment cycles. However, challenges such as cold starts and vendor lock-in must be considered. We’ll also explore practical use cases and tips for designing serverless applications effectively.",
+      "favorites": 17
+    },
+    {
+      "username": "Mikhael Edman P. Gomez",
+      "userProfileImageUrl": "https://i.ibb.co/Y7znzJMc/432777817-1805872079896741-4079799830112579823-n.jpg",
+      "postDate": "2025-04-05T08:00:00Z",
+      "title": "A Deep Dive into GraphQL",
+      "about": "GraphQL offers a powerful alternative to REST APIs, enabling clients to specify exactly what data they need. This article explains how GraphQL works and why it's gaining traction among developers.",
+      "content": "Unlike REST, GraphQL queries return predictable results tailored to the client’s needs, minimizing overfetching and underfetching of data. We'll cover schema design, resolvers, and how to set up a GraphQL server using popular frameworks. Case studies from companies successfully using GraphQL will also be discussed.",
+      "favorites": 33
+    },
+    {
+      "username": "Mikhael Edman P. Gomez",
+      "userProfileImageUrl": "https://i.ibb.co/Y7znzJMc/432777817-1805872079896741-4079799830112579823-n.jpg",
+      "postDate": "2025-01-28T14:20:00Z",
+      "title": "Building Accessible Web Applications",
+      "about": "Accessibility is critical for creating inclusive web experiences. This article outlines key principles and techniques for designing websites usable by everyone, including those with disabilities.",
+      "content": "From semantic HTML and ARIA roles to keyboard navigation and color contrast, we'll discuss how to meet WCAG standards. Practical tips and tools will help developers test and improve their sites' accessibility, ensuring compliance and better user experience for all visitors.",
+      "favorites": 28
+    },
+    {
+      "username": "Mikhael Edman P. Gomez",
+      "userProfileImageUrl": "https://i.ibb.co/Y7znzJMc/432777817-1805872079896741-4079799830112579823-n.jpg",
+      "postDate": "2025-02-15T11:30:00Z",
+      "title": "Introduction to WebAssembly",
+      "about": "WebAssembly is revolutionizing web development by enabling near-native performance for browser applications. This beginner-friendly article introduces its fundamentals and potential uses.",
+      "content": "WebAssembly allows developers to run code written in languages like C, C++, and Rust on the web at speeds much faster than JavaScript alone. We'll cover how to compile to WebAssembly, integrate it with JavaScript, and highlight real-world examples such as games, image processing, and CAD applications in the browser.",
+      "favorites": 24
+    }
+  ],
+  "articlesCount": 5
+}
+
+
+
+

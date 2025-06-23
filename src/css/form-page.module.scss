@@ -1,0 +1,179 @@
+@use 'variables' as v;
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+  min-height: 73.3vh;
+  margin-bottom: 50px;
+}
+
+.header {
+  font-family: v.$decorative-font;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: v.$text-color;
+}
+
+.link {
+  all: unset;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: v.$link-color;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input {
+  width: 525px;
+  height: 55px;
+  background-color: v.$background-color;
+  border: 1px solid rgba(31, 41, 55, 0.2);
+  border-radius: 5px;
+  font-size: 1.2rem;
+  padding: 5px 20px;
+  caret-color: rgba(0, 0, 0, 0.5);
+}
+
+.input:focus {
+  outline: none;
+  border: 1px solid rgba(30, 144, 255, 0.7);
+}
+
+.button {
+  width: 120px;
+  height: 55px;
+  border-radius: 6px;
+  background-color: #059669;
+  font-size: 1.2rem;
+  color: v.$background-color;
+  align-self: flex-end;
+  border: none;
+  cursor: pointer;
+  
+}
+
+.button:hover {
+  background-color: v.$primary-color;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.hrSettings {
+  margin-top: -10px;
+  width: 525px;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.logout {
+  margin-top: -10px;
+  width: 200px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: v.$background-color;
+  font-size: 0.94rem;
+  color: #c45c5c;
+  border: 1px solid #c45c5c;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-bottom: 16px;;
+}
+
+.logout:hover {
+  color: v.$background-color;
+  background-color: #c45c5c;
+}
+
+
+.errorMessage {
+  color: #c45c5c;
+  align-self: flex-start;
+}
+
+.successMessage {
+  color: #059669;
+  align-self: flex-start;
+}
+
+//Modifiers use in NewArticle Page
+
+.formModified {
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.inputArticle {
+  width: 850px;
+  height: 45px;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+}
+
+.buttonWider {
+  width: 170px;
+  margin-top: -10px;
+}
+
+.textarea {
+  resize: vertical;
+  width: 850px;
+  height: auto;
+  font-size: 0.9rem;
+  padding: 10px 10px;
+
+}
+
+
+//Modifiers use in Settings Page
+
+.inputSmall {
+  height: 45px;
+  font-size: 0.9rem;
+  padding: 5px 10px;
+}
+
+.textareaSmall {
+  resize: vertical;
+  font-size: 1.2rem;
+  height: auto;
+  padding: 20px 20px;
+}
+
+
+@media (max-width: 840px) {
+  .header {
+    font-size: 2rem;
+  }
+  .form {
+    width: 60vw;
+  }
+  .hr-settings {
+    width: 60vw;
+  }
+  .input {
+    width: unset;
+    flex-grow: 1;
+    min-width: 0;
+  }
+}

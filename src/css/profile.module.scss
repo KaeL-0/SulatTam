@@ -1,0 +1,126 @@
+@use 'variables' as v;
+
+.pageLayout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
+    min-height: 85vh;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f3f3f3;
+    height: 37.048vh; 
+    padding: 32px 0px 0px 0px;
+    width: 100vw;
+    margin-bottom: 48px;
+}
+
+.imgFrame {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+}
+
+.username {
+    font-family: v.$decorative-font;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: v.$text-color;
+    margin-bottom: 7px;
+}
+
+.bio {
+    font-size: 0.85rem;
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 350;
+}
+
+.edit {
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 0.8rem;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+    padding: 5px 8px 5px 8px;
+    text-decoration: none;
+    align-self: flex-end;
+    justify-content: flex-end;
+    margin-top: 14px;
+    margin-right: 7vw;
+}
+
+.edit:hover {
+    background-color: #E0E0E0;
+}
+
+.gear {
+    margin-right: 2.5px;
+}
+
+.main {
+    margin-left: 0px;
+}
+
+.yourArticle {
+    font-size: 0.9rem;
+    border-bottom: 2px solid v.$primary-color;
+}
+
+.yourFavoritedArticle {
+    font-size: 0.9rem;
+    border: none;
+}
+
+@media (max-height: 600px) {
+
+  .header {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: auto;               // Let header height adjust automatically
+    padding: 24px 16px 24px 16px;
+  }
+
+  .imgFrame {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 12px;
+  }
+
+  .username {
+    font-size: 1.2rem;
+  }
+
+  .bio {
+    font-size: 0.75rem;
+  }
+
+  .edit {
+    font-size: 0.75rem;
+    padding: 4px 6px;
+    margin-right: 0px;
+    align-self: center;         // Center the edit button on small screens
+    justify-content: center;
+  }
+
+  .main {
+    margin-left: 0;
+    width: 100vw;               // Make main take full viewport width on mobile
+    padding: 0 12px;            // Add horizontal padding for content
+  }
+
+  .yourArticle,
+  .yourFavoritedArticle {
+    font-size: 0.85rem;
+  }
+}

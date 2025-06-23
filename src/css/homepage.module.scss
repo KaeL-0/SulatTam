@@ -1,0 +1,296 @@
+@use 'variables' as v;
+
+.pageLayout {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+hr {
+    width: 62.5vw;
+    border: none;
+    border-top: 2px solid rgba(0, 0, 0, 0.15);
+}
+
+.main {
+    margin-left: 7vw;
+    width: 62.5vw;
+}
+
+.feed {
+    margin-bottom: 20px;
+}
+
+.feedList {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: #1F2937;
+}
+
+.yourFeed {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid v.$primary-color;
+    border: none; 
+    
+}
+
+.globalFeed {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid v.$primary-color;
+
+}
+
+.feed hr {
+    position: relative;
+    top: -2px;
+}
+
+.aside {
+    margin-right: 7vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 24px;
+}
+
+.popularTagsTitle {
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: #1F2937;
+    white-space: nowrap;
+    text-align: center;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+    margin-bottom: 12px;
+    width: 17vw;
+}
+
+.popularTagsList {
+    width: 17vw;
+    padding-left: 1.7vw;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #1F2937;
+}
+
+.popularTagsList > li {
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-bottom: 4px;
+    border-bottom: 2.4px solid rgba(0, 0, 0, 0.5);
+}
+
+.popularTagsList > li > button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+.popularTagsList > li:hover {
+    border-bottom: 2.4px solid v.$primary-color;
+}
+
+.articlePost {
+    margin-bottom: 20px;
+}
+
+.articlepostInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.articlepostInfoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.imgFrame {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.imgFrame > img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.articlepostNameDate {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+}
+
+.articlepostUsername {
+    font-size: 1rem;
+    color: v.$primary-color;
+}
+
+.articlepostDate {
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.favorites {
+    box-sizing: content-box;
+    font-size: 0.875rem;
+    min-width: 1.0625rem;
+    background-color: #FAFAFA;
+    color: v.$primary-color;
+    text-align: center;
+    padding: 6px 10px;
+    border: 1px solid v.$primary-color;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.favorites:hover {
+    color: v.$background-color;
+    background-color: v.$primary-color;
+}
+
+.articleContent {
+  cursor: pointer;
+}
+
+.articleContent > h2 {
+    font-family: v.$secondary-font;
+    font-size: 2rem;
+    font-weight: 700;
+    color: v.$text-color;
+    margin-bottom: 14px;
+}
+
+.articleContent > p {
+    font-size: 1rem;
+    font-weight: 350;
+    line-height: 1.5;
+    color: v.$text-color;
+    margin-bottom: 6px;
+}
+
+.articleContent > span {
+    font-size: 0.812rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.articlePost > hr {
+    margin-top: 26px;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .main {
+    margin-left: 4vw;
+    width: 66vw;
+  }
+
+  .aside {
+    margin-right: 4vw;
+  }
+
+  .popularTagsTitle,
+  .popularTagsList {
+    width: 20vw;
+  }
+
+  hr {
+    width: 66vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageLayout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main {
+    margin-left: 0;
+    width: 90vw;
+  }
+
+  .feedList {
+    font-size: 1rem;
+    gap: 6px;
+  }
+
+  .articlepostUsername {
+    font-size: 0.9rem;
+  }
+
+  .articlepostDate {
+    font-size: 0.775rem;
+  }
+
+  .favorites {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+
+  .aside {
+    margin: 32px 0 0 0;
+    top: 0;
+    align-items: flex-start;
+    padding: 0 5vw;
+  }
+
+  .popularTagsTitle,
+  .popularTagsList {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  hr,
+  .feed hr {
+    width: 90vw;
+  }
+}
+
+@media (max-width: 480px) {
+  
+
+  .articlepostInfo {
+    align-items: center;
+    gap: 8px;
+  }
+
+  .favorites {
+    align-self: flex-end;
+  }
+
+  .articlePost > h2 {
+    font-size: 1.5rem;
+  }
+
+  .articlePost > p {
+    font-size: 0.95rem;
+  }
+
+  .articlePost > span {
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,36 @@
+@use 'variables' as v;
+
+footer {
+    padding: 1rem;
+    padding-left: 13.76vw;
+    font-size: 0.75rem;
+    font-weight: 300;
+    background-color: #E5E5E5;
+    color: rgba(0, 0, 0, 0.5);
+
+    > a {
+        all: unset;
+        color: v.$link-color;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    > span {
+        font-family: v.$decorative-font;
+        font-weight: 600;
+        color: rgba(31, 41, 55, 0.8);
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  footer {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    font-size: 0.6875rem;
+    text-align: center;
+  }
+}

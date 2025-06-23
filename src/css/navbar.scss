@@ -1,0 +1,58 @@
+@use 'variables' as v;
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-left: 7vw;
+    margin-right: 7vw;
+
+    > .navBrand {
+        font-family: v.$decorative-font;
+        font-size: 2rem;
+        font-weight: 600;
+        color: v.$primary-color;
+    }
+
+    > ul {
+        font-family: 'Inter', sans-serif;
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        font-size: 0.875rem;
+        color: rgba(31, 41, 55, 0.5);
+
+        a {
+            all: unset;
+            cursor: pointer;
+            color: inherit;
+            
+            &:hover {
+                color: rgba(31, 41, 55, 0.7);
+            }
+        }
+
+        a.active {
+            color: rgba(31, 41, 55, 1);
+        }
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  nav {
+    margin-left: 5vw;
+    margin-right: 5vw;
+
+    > .navBrand {
+      font-size: 1.5rem;
+    }
+
+    > ul {
+      font-size: 0.8rem;
+      gap: 15px;
+    }
+  }
+}

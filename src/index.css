@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+html, body, div#root {
+    min-height: 100vh;
+}
+
+body {
+    background-color: #FAFAFA;
+}
+
+div#root {
+    position: relative;
+}
