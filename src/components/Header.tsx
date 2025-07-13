@@ -1,4 +1,3 @@
-import '../css/fonts.module.scss';
 import styles from '../css/header.module.scss';
 
 
