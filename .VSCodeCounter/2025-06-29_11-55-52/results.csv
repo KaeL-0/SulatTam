@@ -1,0 +1,39 @@
+"filename", "language", "TypeScript JSX", "SCSS", "TypeScript", "PostCSS", "JSON", "comment", "blank", "total"
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\App.tsx", "TypeScript JSX", 57, 0, 0, 0, 0, 0, 8, 65
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\components\ArticleItem.tsx", "TypeScript JSX", 70, 0, 0, 0, 0, 0, 8, 78
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\components\CurrentUserArticleElements.tsx", "TypeScript JSX", 39, 0, 0, 0, 0, 0, 5, 44
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\components\Footer.tsx", "TypeScript JSX", 6, 0, 0, 0, 0, 0, 2, 8
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\components\GlobalArticleElements.tsx", "TypeScript JSX", 39, 0, 0, 0, 0, 0, 7, 46
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\components\Header.tsx", "TypeScript JSX", 10, 0, 0, 0, 0, 0, 2, 12
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\components\Navbar.tsx", "TypeScript JSX", 24, 0, 0, 0, 0, 0, 4, 28
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\components\RedirectIfAuth.tsx", "TypeScript JSX", 9, 0, 0, 0, 0, 0, 6, 15
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\components\RedirectIfInvalid.tsx", "TypeScript JSX", 10, 0, 0, 0, 0, 0, 3, 13
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\components\RequireAuth.tsx", "TypeScript JSX", 9, 0, 0, 0, 0, 0, 3, 12
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\context\ArticleInfoProvider.tsx", "TypeScript JSX", 28, 0, 0, 0, 0, 0, 4, 32
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\context\CurrentUserArticlesContext.tsx", "TypeScript JSX", 66, 0, 0, 0, 0, 0, 8, 74
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\context\GlobalArticlesContext.tsx", "TypeScript JSX", 66, 0, 0, 0, 0, 0, 8, 74
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\context\UserFavoriteArticlesContext.tsx", "TypeScript JSX", 3, 0, 0, 0, 0, 0, 0, 3
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\context\UserInfoProvider.tsx", "TypeScript JSX", 114, 0, 0, 0, 0, 1, 23, 138
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\context\articleTypes.ts", "TypeScript", 0, 0, 51, 0, 0, 0, 4, 55
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\css\_variables.scss", "SCSS", 0, 7, 0, 0, 0, 0, 0, 7
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\css\fonts.module.scss", "SCSS", 0, 30, 0, 0, 0, 0, 4, 34
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\css\footer.scss", "SCSS", 0, 30, 0, 0, 0, 1, 6, 37
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\css\form-page.module.scss", "SCSS", 0, 148, 0, 0, 0, 2, 29, 179
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\css\header.scss", "SCSS", 0, 35, 0, 0, 0, 1, 8, 44
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\css\homepage.module.scss", "SCSS", 0, 271, 0, 0, 0, 1, 56, 328
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\css\navbar.scss", "SCSS", 0, 48, 0, 0, 0, 1, 9, 58
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\css\profile.module.scss", "SCSS", 0, 105, 0, 0, 0, 0, 21, 126
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\data\articles.ts", "TypeScript", 0, 0, 36, 0, 0, 0, 2, 38
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\data\json.json", "JSON", 0, 0, 0, 0, 50, 0, 5, 55
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\index.css", "PostCSS", 0, 0, 0, 14, 0, 0, 3, 17
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\main.tsx", "TypeScript JSX", 18, 0, 0, 0, 0, 0, 2, 20
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\pages\Homepage.tsx", "TypeScript JSX", 36, 0, 0, 0, 0, 0, 5, 41
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\pages\NewArticle.tsx", "TypeScript JSX", 130, 0, 0, 0, 0, 0, 18, 148
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\pages\Profile.tsx", "TypeScript JSX", 34, 0, 0, 0, 0, 0, 5, 39
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\pages\Settings.tsx", "TypeScript JSX", 164, 0, 0, 0, 0, 0, 25, 189
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\pages\SignIn.tsx", "TypeScript JSX", 106, 0, 0, 0, 0, 0, 22, 128
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\pages\SignUp.tsx", "TypeScript JSX", 108, 0, 0, 0, 0, 0, 21, 129
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\pages\ViewArticle.tsx", "TypeScript JSX", 7, 0, 0, 0, 0, 0, 2, 9
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\utilities\PaginationButton.tsx", "TypeScript JSX", 39, 0, 0, 0, 0, 0, 4, 43
+"c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\vite-env.d.ts", "TypeScript", 0, 0, 0, 0, 0, 1, 1, 2
+"Total", "-", 1192, 674, 87, 14, 50, 8, 343, 2368

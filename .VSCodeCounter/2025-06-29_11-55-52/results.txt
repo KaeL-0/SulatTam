@@ -1,0 +1,72 @@
+Date : 2025-06-29 11:55:52
+Directory : c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src
+Total : 37 files,  2017 codes, 8 comments, 343 blanks, all 2368 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| TypeScript JSX |         24 |      1,192 |          1 |        195 |      1,388 |
+| SCSS           |          8 |        674 |          6 |        133 |        813 |
+| TypeScript     |          3 |         87 |          1 |          7 |         95 |
+| JSON           |          1 |         50 |          0 |          5 |         55 |
+| PostCSS        |          1 |         14 |          0 |          3 |         17 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                   |         37 |      2,017 |          8 |        343 |      2,368 |
+| . (Files)                                                                                           |          4 |         89 |          1 |         14 |        104 |
+| components                                                                                          |          9 |        216 |          0 |         40 |        256 |
+| context                                                                                             |          6 |        328 |          1 |         47 |        376 |
+| css                                                                                                 |          8 |        674 |          6 |        133 |        813 |
+| data                                                                                                |          2 |         86 |          0 |          7 |         93 |
+| pages                                                                                               |          7 |        585 |          0 |         98 |        683 |
+| utilities                                                                                           |          1 |         39 |          0 |          4 |         43 |
++-----------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                            | language       | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\App.tsx                                   | TypeScript JSX |         57 |          0 |          8 |         65 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\components\ArticleItem.tsx                | TypeScript JSX |         70 |          0 |          8 |         78 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\components\CurrentUserArticleElements.tsx | TypeScript JSX |         39 |          0 |          5 |         44 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\components\Footer.tsx                     | TypeScript JSX |          6 |          0 |          2 |          8 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\components\GlobalArticleElements.tsx      | TypeScript JSX |         39 |          0 |          7 |         46 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\components\Header.tsx                     | TypeScript JSX |         10 |          0 |          2 |         12 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\components\Navbar.tsx                     | TypeScript JSX |         24 |          0 |          4 |         28 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\components\RedirectIfAuth.tsx             | TypeScript JSX |          9 |          0 |          6 |         15 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\components\RedirectIfInvalid.tsx          | TypeScript JSX |         10 |          0 |          3 |         13 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\components\RequireAuth.tsx                | TypeScript JSX |          9 |          0 |          3 |         12 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\context\ArticleInfoProvider.tsx           | TypeScript JSX |         28 |          0 |          4 |         32 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\context\CurrentUserArticlesContext.tsx    | TypeScript JSX |         66 |          0 |          8 |         74 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\context\GlobalArticlesContext.tsx         | TypeScript JSX |         66 |          0 |          8 |         74 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\context\UserFavoriteArticlesContext.tsx   | TypeScript JSX |          3 |          0 |          0 |          3 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\context\UserInfoProvider.tsx              | TypeScript JSX |        114 |          1 |         23 |        138 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\context\articleTypes.ts                   | TypeScript     |         51 |          0 |          4 |         55 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\css\_variables.scss                       | SCSS           |          7 |          0 |          0 |          7 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\css\fonts.module.scss                     | SCSS           |         30 |          0 |          4 |         34 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\css\footer.scss                           | SCSS           |         30 |          1 |          6 |         37 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\css\form-page.module.scss                 | SCSS           |        148 |          2 |         29 |        179 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\css\header.scss                           | SCSS           |         35 |          1 |          8 |         44 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\css\homepage.module.scss                  | SCSS           |        271 |          1 |         56 |        328 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\css\navbar.scss                           | SCSS           |         48 |          1 |          9 |         58 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\css\profile.module.scss                   | SCSS           |        105 |          0 |         21 |        126 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\data\articles.ts                          | TypeScript     |         36 |          0 |          2 |         38 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\data\json.json                            | JSON           |         50 |          0 |          5 |         55 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\index.css                                 | PostCSS        |         14 |          0 |          3 |         17 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\main.tsx                                  | TypeScript JSX |         18 |          0 |          2 |         20 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\pages\Homepage.tsx                        | TypeScript JSX |         36 |          0 |          5 |         41 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\pages\NewArticle.tsx                      | TypeScript JSX |        130 |          0 |         18 |        148 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\pages\Profile.tsx                         | TypeScript JSX |         34 |          0 |          5 |         39 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\pages\Settings.tsx                        | TypeScript JSX |        164 |          0 |         25 |        189 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\pages\SignIn.tsx                          | TypeScript JSX |        106 |          0 |         22 |        128 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\pages\SignUp.tsx                          | TypeScript JSX |        108 |          0 |         21 |        129 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\pages\ViewArticle.tsx                     | TypeScript JSX |          7 |          0 |          2 |          9 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\utilities\PaginationButton.tsx            | TypeScript JSX |         39 |          0 |          4 |         43 |
+| c:\Users\gomez\repos\BlogPostWebsite Project\SulatTam\src\vite-env.d.ts                             | TypeScript     |          0 |          1 |          1 |          2 |
+| Total                                                                                               |                |      2,017 |          8 |        343 |      2,368 |
++-----------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+

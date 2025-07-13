@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 24px;
+    min-height: 47.23vh;
 }
 
 hr {
@@ -31,21 +32,17 @@ hr {
     color: #1F2937;
 }
 
-.yourFeed {
+.feedList > li {
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 8px;
     border-bottom: 2px solid v.$primary-color;
-    border: none; 
-    
+    border: none;
+    cursor: pointer;
 }
 
-.globalFeed {
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 8px;
+.feedList > .feedActive {
     border-bottom: 2px solid v.$primary-color;
-
 }
 
 .feed hr {
@@ -76,38 +73,41 @@ hr {
 
 .popularTagsList {
     width: 17vw;
-    padding-left: 1.7vw;
+    padding-left: 0;
     list-style: none;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 14px;
-    font-size: 1rem;
-    font-weight: 300;
-    color: #1F2937;
+    gap: 6px;
+    margin-bottom: 30px;
+
+    > li {
+        padding: 0 6px 4px;
+        border: 1px solid rgba(0, 0, 0, 0.35);
+        border-radius: 10px;
+
+        > button {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.5);
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+        }
+    }
 }
 
-.popularTagsList > li {
-    padding-left: 6px;
-    padding-right: 6px;
-    padding-bottom: 4px;
-    border-bottom: 2.4px solid rgba(0, 0, 0, 0.5);
+li.tagError {
+    width: 100%;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 0.85rem;
+    padding: 6px 0;
+    border-radius: 8px;
+    border: 1px dashed rgba(0, 0, 0, 0.3);
 }
-
-.popularTagsList > li > button {
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-    font: inherit;
-    color: inherit;
-    cursor: pointer;
-}
-
-.popularTagsList > li:hover {
-    border-bottom: 2.4px solid v.$primary-color;
-}
-
 .articlePost {
     margin-bottom: 20px;
 }
@@ -134,6 +134,7 @@ hr {
 .imgFrame > img {
     max-width: 100%;
     max-height: 100%;
+    cursor: pointer;
 }
 
 .articlepostNameDate {
@@ -145,12 +146,22 @@ hr {
 .articlepostUsername {
     font-size: 1rem;
     color: v.$primary-color;
+    cursor: pointer;
+
+    display: inline-block;     
+    width: fit-content;     
+    border-bottom: 2px solid transparent;
+}
+
+.articlepostUsername:hover {
+    border-color: v.$primary-color;
 }
 
 .articlepostDate {
-    font-size: 0.875rem;
-    font-weight: 300;
-    color: rgba(0, 0, 0, 0.5);
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    color: rgba(0, 0, 0, 0.3);
 }
 
 .favorites {
@@ -160,10 +171,15 @@ hr {
     background-color: #FAFAFA;
     color: v.$primary-color;
     text-align: center;
-    padding: 6px 10px;
+    padding: 5px 8px;
     border: 1px solid v.$primary-color;
     border-radius: 5px;
     cursor: pointer;
+    &::before {
+        content: '❤︎';
+        font-size: 0.9rem;
+        margin-right: 4px;
+    }
 }
 
 .favorites:hover {
@@ -177,10 +193,10 @@ hr {
 
 .articleContent > h2 {
     font-family: v.$secondary-font;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: v.$text-color;
-    margin-bottom: 14px;
+    margin-bottom: 6px;
 }
 
 .articleContent > p {
@@ -188,7 +204,7 @@ hr {
     font-weight: 350;
     line-height: 1.5;
     color: v.$text-color;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
 }
 
 .articleContent > span {
@@ -199,6 +215,37 @@ hr {
 
 .articlePost > hr {
     margin-top: 26px;
+}
+
+.pageButton {
+  width: 25px;
+  height: 30px;
+  font-size: 0.9rem;
+  background-color: v.$background-color;
+  color: v.$text-color;
+  align-self: flex-end;
+  border: 1.4px solid v.$primary-color;
+  border-left: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.pageButtonFirst {
+  border-left: 1.4px solid v.$primary-color;
+}
+
+.pageButton:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+button.pageButtonActive {
+  background-color: v.$primary-color;
+  color: v.$background-color;
+}
+
+button.pageButtonActive:hover {
+  background-color: v.$primary-color;
+  color: v.$background-color;
 }
 
 /* Responsive styles */

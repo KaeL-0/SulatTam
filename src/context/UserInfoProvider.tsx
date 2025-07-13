@@ -2,6 +2,7 @@ import { createContext, useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+
 type AuthContextType = {
     isLogin: boolean;
     setIsLogin: React.Dispatch<React.SetStateAction<boolean>>;
@@ -26,9 +27,7 @@ const UserContext = createContext<UserContextType | undefined>(undefined);
 // Provider component
 export function UserInfoProvider({ children }: { children: React.ReactNode }) {
 
-    const [isLogin, setIsLogin] = useState(() => {
-        return localStorage.getItem('token') ? true : false;
-    });
+    const [isLogin, setIsLogin] = useState(false);
 
     const navigate = useNavigate();
 
@@ -54,40 +53,29 @@ export function UserInfoProvider({ children }: { children: React.ReactNode }) {
 
     useEffect(() => {
 
-        const token = localStorage.getItem('token');
-        if (!token) {
-            localStorage.removeItem('user');
-            setIsLogin(false);
-            setUserProfileUrl('');
-            setUsername('');
-            setBio('');
-            setEmail('');
-            setIsTokenMissing(true);
-            navigate('/login')
-            return;
-        };
-
         async function fetchUserData() {
             try {
-                const response = await axios.get('http://localhost/sulat_tam/api/get_user.php', {
-                    headers: {
-                        Authorization: `Bearer ${token}`
-                    }
+                const response = await axios.get('https://sulat-tam.alwaysdata.net/gets/current_user_info.php', {
+                    withCredentials: true
                 });
 
                 const data = response.data.user;
+                
                 if (data) {
                     localStorage.setItem('user', JSON.stringify(data));
+                    setUserProfileUrl(data.user_profile_url ?? '');
+                    setUsername(data.username ?? '');
+                    setBio(data.bio ?? '');
+                    setEmail(data.email ?? '');
+                    setIsLogin(true);
                 }
             } catch (error) {
-                console.error('Failed to fetch user profile:', error);
-                localStorage.removeItem('token');
                 localStorage.removeItem('user');
-                setIsLogin(false);
                 setUserProfileUrl('');
                 setUsername('');
                 setBio('');
                 setEmail('');
+                setIsLogin(false);
                 setIsTokenMissing(true);
                 navigate('/login')
             }
@@ -100,7 +88,15 @@ export function UserInfoProvider({ children }: { children: React.ReactNode }) {
     return (
         <AuthContext.Provider value={{ isLogin, setIsLogin, isTokenMissing, setIsTokenMissing }}>
             <UserContext.Provider
-                value={{ userProfileUrl, setUserProfileUrl, username, setUsername, bio, setBio, email, setEmail}}
+                value={{ 
+                    userProfileUrl, 
+                    setUserProfileUrl,
+                    username, 
+                    setUsername, 
+                    bio, 
+                    setBio, 
+                    email, 
+                    setEmail}}
             >
                 {children}
             </UserContext.Provider>
@@ -116,7 +112,7 @@ export function useAuthContext() {
 
 export function useUserContext() {
     const context = useContext(UserContext);
-    if (!context) throw new Error('useUser must be used within a UserContext.Provider');
+    if (!context) throw new Error('useUser must be used within an UserContext.Provider');
     return context;
 }
 

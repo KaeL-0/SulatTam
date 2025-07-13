@@ -1,0 +1,109 @@
+@use 'variables' as v;
+
+.commentItem {
+    width: 100%;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    background-color: v.$background-color;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.commentText {
+    font-size: 0.9rem;
+    padding: 20px;
+    background-color: v.$background-color;
+    margin: 0;
+}
+
+.commentMetaLayout {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.03);
+    padding: 14px 20px;
+    border-top: 1px solid #eee;
+}
+
+.commentMeta {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.8rem;
+    color: #777; 
+}
+
+.imgComment {
+    width: 20px;
+    height: 20px;
+    background-color: v.$background-color;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.commentUsername {
+    color: v.$primary-color;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
+
+.commentUsername:hover {
+    border-color: v.$primary-color;
+}
+
+.commentDate {
+    font-size: 0.7rem;
+    color: #bbb;
+}
+
+.deleteIcon {
+    margin-left: auto;
+    color: #888;
+    cursor: pointer;
+
+    &:hover {
+        color: #e74c3c;
+    }
+}
+
+@media (max-width: 1024px) {
+    .commentText {
+        font-size: 0.85rem;
+        padding: 18px;
+    }
+
+    .commentMeta {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .commentText {
+        font-size: 0.8rem;
+        padding: 16px;
+    }
+
+    .commentMetaLayout {
+        padding: 12px 16px;
+    }
+
+    .imgComment {
+        width: 18px;
+        height: 18px;
+    }
+
+    .commentDate {
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .commentMeta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .deleteIcon {
+        margin-left: 0;
+        align-self: flex-end;
+    }
+}

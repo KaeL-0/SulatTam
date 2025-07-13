@@ -1,16 +1,27 @@
-import styles from '../css/profile.module.scss'
-import shared from '../css/homepage.module.scss'
-import { IoSettingsOutline } from 'react-icons/io5';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-//import ArticleElements from '../components/ArticleElements.tsx';
-import { useUserContext } from '../context/UserInfoContext';
+import { IoSettingsOutline } from 'react-icons/io5';
+
+import { useUserContext } from '../context/UserInfoProvider';
+
+import CurrentUserArticleElements from '../components/CurrentUserArticleElements';
+import FavoriteArticleElements from '../components/FavoriteArticleElements';
+
+import FeedList from '../utilities/FeedList';
+
+import styles from '../css/profile.module.scss';
+import shared from '../css/homepage.module.scss';
+
 
 export default function Profile() {
     
     
     const { userProfileUrl, username, bio } = useUserContext();
+    const [currentFeed, setCurrentFeed] = useState<0 | 1  | 2>(0);
+
+    
+
     return (
-        
         <div className={styles.pageLayout}>
             <header className={styles.header}>
                 <div className={`${shared.imgFrame} ${styles.imgFrame}` }>
@@ -25,13 +36,13 @@ export default function Profile() {
                 </NavLink>
             </header>
             <main className={`${shared.main} ${styles.main}`}>
-                <div className={shared.feed}>
-                    <ul className={shared.feedList}>
-                        <li className={`${shared.yourFeed} ${styles.yourArticle}`}>Your Articles</li>
-                        <li className={`${shared.globalFeed} ${styles.yourFavoritedArticle}`}>Your Favorited Articles</li>
-                    </ul>
-                    <hr />
-                </div>
+                <FeedList
+                    currentFeed={currentFeed}
+                    setCurrentFeed={setCurrentFeed}
+                    feedNames={["Your Articles", "Your Favorite Articles"]}
+                />
+                {!currentFeed ? <CurrentUserArticleElements /> : <FavoriteArticleElements />}
+                
             </main>
         </div>
     )

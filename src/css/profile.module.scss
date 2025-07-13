@@ -76,6 +76,23 @@
     border: none;
 }
 
+.btnFollow{
+  &::before {
+        content: '+';
+        font-size: 1.2rem;
+        margin-right: 4px;
+    }
+}
+
+button.btnUnfollow {
+
+    &::before {
+        content: '-';
+        font-size: 1.2rem;
+        margin-right: 4px;
+    }
+}
+
 @media (max-height: 600px) {
 
   .header {

@@ -1,14 +1,19 @@
-import styles from '../css/form-page.module.scss';
-import { useAuthContext, useSetUserFromStorage, useUserContext } from '../context/UserInfoContext';
-import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+
+import { useAuthContext, useSetUserFromStorage, useUserContext } from '../context/UserInfoProvider';
+import { useCurrentUserArticleContext, useGlobalArticleContext } from '../context/ArticleInfoProvider';
+
+import styles from '../css/form-page.module.scss';
 
 export default function Settings() {
     const navigate = useNavigate();
     const { setIsLogin, setIsTokenMissing } = useAuthContext();
     const refreshUserData = useSetUserFromStorage();
     const { username: storedUsername, bio: storedBio, email: storedEmail } = useUserContext();
+    const { setRefreshCurrentUserArticles } = useCurrentUserArticleContext();
+    const { setRefreshGlobalArticles } = useGlobalArticleContext()
 
     const [formData, setFormData] = useState({
         username: storedUsername || '',
@@ -21,8 +26,17 @@ export default function Settings() {
     const [error, setError] = useState<string | null>(null);
     const [success, setSuccess] = useState<string | null>(null);
 
-    function handleLogout() {
-        localStorage.removeItem('token');
+    async function handleLogout() {
+
+        const response = await axios.post(
+            'https://sulat-tam.alwaysdata.net/auths/logout.php', {} ,
+            { 
+                withCredentials: true 
+            }
+        )
+
+        const data = response.data;
+        console.log('Server response:', data['message']);
         localStorage.removeItem('user');
         setIsLogin(false);
         refreshUserData();
@@ -42,8 +56,6 @@ export default function Settings() {
         event.preventDefault();
         setError(null);
         setSuccess(null);
-        const token = localStorage.getItem('token');
-
 
         const form = new URLSearchParams();
         form.append('username', formData.username);
@@ -54,13 +66,12 @@ export default function Settings() {
 
         try {
             const response = await axios.post(
-                'http://localhost/sulat_tam/api/update_user.php',
+                'https://sulat-tam.alwaysdata.net/updates/user_info.php',
                 form.toString(),
                 {
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded',
-                        'Authorization': `Bearer ${token}`
-                    }
+                    }, withCredentials: true
                 }
             );
 
@@ -71,9 +82,11 @@ export default function Settings() {
             
             setSuccess(data['message']);
             refreshUserData();
+            setRefreshCurrentUserArticles(prev => !prev)
+            setRefreshGlobalArticles(prev => !prev)
 
             setTimeout(() => {
-                navigate('/profile');
+                navigate('/my-profile');
             }, 1000);
 
         } catch (error: any) {

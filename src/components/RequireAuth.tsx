@@ -1,12 +1,13 @@
-import { useAuthContext } from '../context/UserInfoContext';
-import { Navigate, useLocation } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+
+import { useAuthContext } from '../context/UserInfoProvider';
+
 
 export default function RequireAuth({ children }: { children: React.ReactNode }) {
     const { isTokenMissing } = useAuthContext();
-    const location = useLocation();
 
     if (isTokenMissing) {
-        return <Navigate to="/login" replace state={{ from: location }} />;
+        return <Navigate to="/login" replace />;
     }
 
     return children;

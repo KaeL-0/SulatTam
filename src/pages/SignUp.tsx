@@ -1,7 +1,8 @@
-import styles from '../css/form-page.module.scss';
-import { NavLink, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+
+import styles from '../css/form-page.module.scss';
 
 
 export default function SignIn() {
@@ -30,7 +31,7 @@ export default function SignIn() {
 
         try {
             const response = await axios.post(
-                'http://localhost/sulat_tam/api/register.php',
+                'https://sulat-tam.alwaysdata.net/auths/register.php',
                 new URLSearchParams(formData).toString(),
                 {
                     headers: {

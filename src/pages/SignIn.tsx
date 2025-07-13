@@ -1,8 +1,12 @@
-import styles from '../css/form-page.module.scss';
-import { NavLink, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useAuthContext, useSetUserFromStorage } from '../context/UserInfoContext';
+
+import { useAuthContext, useSetUserFromStorage } from '../context/UserInfoProvider';
+import { useFavoriteArticlesContext } from '../context/ArticleInfoProvider';
+
+import styles from '../css/form-page.module.scss';
+
 
 export default function SignIn() {
     const navigate = useNavigate();
@@ -17,6 +21,8 @@ export default function SignIn() {
 
     const { setIsLogin, setIsTokenMissing } = useAuthContext();
     const refreshUserData = useSetUserFromStorage();
+    
+    const { setRefreshAll } = useFavoriteArticlesContext();
 
     function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
         setFormData(prev => ({
@@ -33,23 +39,21 @@ export default function SignIn() {
         try {
             
             const response = await axios.post(
-                'http://localhost/sulat_tam/api/login.php',
+                'https://sulat-tam.alwaysdata.net/auths/login.php',
                 new URLSearchParams(formData).toString(),
                 {
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded',
-                    }
+                    },
+                    withCredentials: true
                 }
             );
 
             const data = response.data;
 
             console.log('Server response:', data);
-
-            localStorage.setItem('token', data['token']);
             localStorage.setItem('user', JSON.stringify(data['user']));
-            
-
+            setRefreshAll(prev => !prev)
             setSuccess(data['message'])
             refreshUserData()
             setTimeout(()=> {
@@ -59,7 +63,6 @@ export default function SignIn() {
                 });
                 setIsLogin(true)
                 setIsTokenMissing(false)
-
                 navigate('/')
             }, 1000)
 
