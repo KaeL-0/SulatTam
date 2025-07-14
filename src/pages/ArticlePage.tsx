@@ -7,6 +7,7 @@ import { useFavoriteArticlesContext } from '../context/ArticleInfoProvider';
 import { useFeedArticleContext } from '../context/ArticleInfoProvider';
 
 import CommentSection from '../components/CommentSection';
+import BASE_URL from '../utilities/dynamicDomain';
 
 import type { NavigateFunction } from 'react-router-dom';
 import type { Comment } from '../components/CommentSection';
@@ -79,7 +80,7 @@ export default function ArticlePage() {
     async function fetchFollowStatus(authorId: number) {
         try {
             const response = await axios.get(
-                'https://sulat-tam.alwaysdata.net/gets/follow_status.php',
+                `${BASE_URL}/gets/follow_status.php`,
                 {
                     params: { followee_id: authorId },
                     withCredentials: true,
@@ -98,7 +99,7 @@ export default function ArticlePage() {
     async function fetchFavoriteStatus(articleId: number) {
         try {
             const response = await axios.get(
-                'https://sulat-tam.alwaysdata.net/gets/favorite_status.php',
+                `${BASE_URL}/gets/favorite_status.php`,
                 {
                     params: { article_id: articleId },
                     withCredentials: true
@@ -117,7 +118,7 @@ export default function ArticlePage() {
             setError('');
             try {
                 const response = await axios.get(
-                    'https://sulat-tam.alwaysdata.net/gets/public_view_article.php',
+                    `${BASE_URL}/gets/public_view_article.php`,
                     {
                         params: { username, slug },
                         withCredentials: true
@@ -144,7 +145,7 @@ export default function ArticlePage() {
         if (!authorId) return;
         try {
             const response = await axios.post(
-                'https://sulat-tam.alwaysdata.net/updates/follows.php',
+                `${BASE_URL}/updates/follows.php`,
                 { followee_id: authorId },
                 {
                     withCredentials: true,
@@ -165,7 +166,7 @@ export default function ArticlePage() {
         if (!articleId) return;
         try {
             const response = await axios.post(
-                'https://sulat-tam.alwaysdata.net/updates/favorites.php',
+                `${BASE_URL}/updates/favorites.php`,
                 { article_id: articleId },
                 { withCredentials: true }
             );

@@ -2,6 +2,7 @@ import { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
 import { useFavoriteArticlesContext } from './ArticleInfoProvider';
+import BASE_URL from '../utilities/dynamicDomain';
 
 import type { PreviewArticle, FeedArticlesContextType } from './articleTypes';
 
@@ -23,7 +24,7 @@ export function FeedArticlesProvider({ children }: { children: React.ReactNode }
         async function fetchFeedArticles() {
             try {
                 const response = await axios.get(
-                    'https://sulat-tam.alwaysdata.net/gets/feed_articles.php',
+                    `${BASE_URL}/gets/feed_articles.php`,
                     {
                         params: { limit: feedLimit, page: feedCurrentPage },
                         withCredentials: true,
@@ -45,7 +46,7 @@ export function FeedArticlesProvider({ children }: { children: React.ReactNode }
         async function fetchFeedArticlesCount() {
             try {
                 const response = await axios.get(
-                    'https://sulat-tam.alwaysdata.net/gets/feed_articles_count.php',
+                    `${BASE_URL}/gets/feed_articles_count.php`,
                     { withCredentials: true }
                 );
                 setFeedArticlesCount(response.data.count);

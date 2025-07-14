@@ -2,6 +2,8 @@ import { createContext, useContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+import BASE_URL from '../utilities/dynamicDomain';
+
 
 type AuthContextType = {
     isLogin: boolean;
@@ -55,7 +57,7 @@ export function UserInfoProvider({ children }: { children: React.ReactNode }) {
 
         async function fetchUserData() {
             try {
-                const response = await axios.get('https://sulat-tam.alwaysdata.net/gets/current_user_info.php', {
+                const response = await axios.get(`${BASE_URL}/gets/current_user_info.php`, {
                     withCredentials: true
                 });
 

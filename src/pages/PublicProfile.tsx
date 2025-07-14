@@ -8,6 +8,7 @@ import { useFeedArticleContext } from '../context/ArticleInfoProvider';
 import ArticleItem from '../components/ArticleCard';
 import FeedList from '../utilities/FeedList';
 import pageButtons from '../utilities/PaginationButton';
+import BASE_URL from '../utilities/dynamicDomain';
 
 import type { PreviewArticle } from '../context/articleTypes';
 
@@ -39,7 +40,7 @@ export default function PublicProfile() {
     async function fetchFollowStatus(authorId: number) {
         try {
             const response = await axios.get(
-                'https://sulat-tam.alwaysdata.net/gets/follow_status.php',
+                `${BASE_URL}/gets/follow_status.php`,
                 {
                     params: { followee_id: authorId },
                     withCredentials: true,
@@ -58,7 +59,7 @@ export default function PublicProfile() {
     useEffect(() => {
         async function fetchPublicProfile() {
             try {
-                const response = await axios.get('https://sulat-tam.alwaysdata.net/gets/public_user_info.php', {
+                const response = await axios.get(`${BASE_URL}/gets/public_user_info.php`, {
                     params: { username },
                     withCredentials: true
                 });
@@ -82,8 +83,8 @@ export default function PublicProfile() {
             try {
                 const url =
                     currentFeed === 0
-                        ? 'https://sulat-tam.alwaysdata.net/gets/public_user_articles.php'
-                        : 'https://sulat-tam.alwaysdata.net/gets/public_favorite_articles.php';
+                        ? `${BASE_URL}/gets/public_user_articles.php`
+                        : `${BASE_URL}/gets/public_favorite_articles.php`;
 
                 const response = await axios.get(url, {
                     params: { username, page: currentPage, limit },
@@ -105,7 +106,7 @@ export default function PublicProfile() {
     async function toggleFollow() {
         try {
             const response = await axios.post(
-                'https://sulat-tam.alwaysdata.net/updates/follows.php',
+                `${BASE_URL}/updates/follows.php`,
                 { followee_id: profileId },
                 {
                     withCredentials: true,

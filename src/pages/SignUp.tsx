@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+import BASE_URL from '../utilities/dynamicDomain';
+
 import styles from '../css/form-page.module.scss';
 
 
@@ -31,7 +33,7 @@ export default function SignIn() {
 
         try {
             const response = await axios.post(
-                'https://sulat-tam.alwaysdata.net/auths/register.php',
+                `${BASE_URL}/auths/register.php`,
                 new URLSearchParams(formData).toString(),
                 {
                     headers: {
@@ -52,7 +54,7 @@ export default function SignIn() {
                     password: ''
                 });
                 navigate('/login')
-            }, 1000)
+            }, 5000)
             
         } catch (error: any) {
             console.error('Error submitting form:', error);

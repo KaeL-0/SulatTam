@@ -2,6 +2,7 @@ import { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
 import { useFavoriteArticlesContext } from './ArticleInfoProvider';
+import BASE_URL from '../utilities/dynamicDomain';
 
 import type { PreviewArticle, GlobalArticlesContextType } from './articleTypes';
 
@@ -23,7 +24,7 @@ export function GlobalArticlesProvider({ children }: { children: React.ReactNode
         async function fetchGlobalArticles() {
             try {
                 const response = await axios.get(
-                    'https://sulat-tam.alwaysdata.net/gets/global_articles.php',
+                    `${BASE_URL}/gets/global_articles.php`,
                     {
                         params: { limit: globalLimit, page: globalCurrentPage },
                         withCredentials: true,
@@ -45,7 +46,7 @@ export function GlobalArticlesProvider({ children }: { children: React.ReactNode
         async function fetchGlobalArticlesCount() {
             try {
                 const response = await axios.get(
-                    'https://sulat-tam.alwaysdata.net/gets/global_articles_count.php',
+                    `${BASE_URL}/gets/global_articles_count.php`,
                     { withCredentials: true }
                 );
                 setGlobalArticlesCount(response.data.count);

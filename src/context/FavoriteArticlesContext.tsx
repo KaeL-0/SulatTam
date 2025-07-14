@@ -1,6 +1,8 @@
 import { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
+import BASE_URL from '../utilities/dynamicDomain';
+
 import type { PreviewArticle, FavoriteArticlesContextType } from './articleTypes';
 
 
@@ -21,7 +23,7 @@ export function FavoriteArticlesProvider({ children }: { children: React.ReactNo
             try {
                 
                 const response = await axios.get(
-                    'https://sulat-tam.alwaysdata.net/gets/favorite_articles.php',
+                    `${BASE_URL}/gets/favorite_articles.php`,
                     {
                         params: { limit: favoriteLimit, page: favoriteArticlesCurrentPage },
                         withCredentials: true,
@@ -43,7 +45,7 @@ export function FavoriteArticlesProvider({ children }: { children: React.ReactNo
         async function fetchFavoriteArticlesCount() {
             try {
                 const response = await axios.get(
-                    'https://sulat-tam.alwaysdata.net/gets/favorite_articles_count.php',
+                    `${BASE_URL}/gets/favorite_articles_count.php`,
                     { withCredentials: true }
                 );
                 setFavoriteArticlesCount(response.data.count);

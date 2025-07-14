@@ -2,6 +2,7 @@ import { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
 import { useFavoriteArticlesContext } from './ArticleInfoProvider';
+import BASE_URL from '../utilities/dynamicDomain';
 
 import type { PreviewArticle, CurrentUserArticlesContextType } from './articleTypes';
 
@@ -23,7 +24,7 @@ export function CurrentUserArticlesProvider({ children }: { children: React.Reac
         async function fetchCurrentUserArticles() {
             try {
                 const response = await axios.get(
-                    'https://sulat-tam.alwaysdata.net/gets/current_user_articles.php',
+                    `${BASE_URL}/gets/current_user_articles.php`,
                     {
                         params: { limit: currentUserLimit, page: currentUserCurrentPage },
                         withCredentials: true,
@@ -45,7 +46,7 @@ export function CurrentUserArticlesProvider({ children }: { children: React.Reac
         async function fetchCurrentUserArticlesCount() {
             try {
                 const response = await axios.get(
-                    'https://sulat-tam.alwaysdata.net/gets/current_user_articles_count.php',
+                    `${BASE_URL}/gets/current_user_articles_count.php`,
                     { withCredentials: true }
                 );
                 setCurrentUserArticlesCount(response.data.count);

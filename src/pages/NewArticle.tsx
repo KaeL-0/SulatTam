@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import { useGlobalArticleContext, useCurrentUserArticleContext } from '../context/ArticleInfoProvider';
+import BASE_URL from '../utilities/dynamicDomain';
 
 import styles from '../css/form-page.module.scss';
 
@@ -36,7 +37,7 @@ export default function NewArticle() {
 
         try {
             const response = await axios.post(
-                'https://sulat-tam.alwaysdata.net/posts/create_article.php',
+                `${BASE_URL}/posts/create_article.php`,
                 new URLSearchParams(formData).toString(),
                 {
                     headers: {

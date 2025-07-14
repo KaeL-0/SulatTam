@@ -2,6 +2,7 @@ import { createContext, useState, useEffect } from "react";
 import axios from "axios";
 
 import { useGlobalArticleContext } from "./ArticleInfoProvider";
+import BASE_URL from "../utilities/dynamicDomain";
 
 import type { Tag, PreviewArticle, TagArticlesContextType } from "./articleTypes";
 
@@ -25,11 +26,12 @@ export function TagArticlesProvider({ children }: { children: React.ReactNode })
         async function fetchPopularTags() {
             try {
                 const response = await axios.get(
-                    'https://sulat-tam.alwaysdata.net/gets/popular_tags.php',
+                    `${BASE_URL}/gets/popular_tags.php`,
                     {
                         withCredentials: true,
                     }
                 );
+                console.log(response)
                 setPopularTags(response.data);
                 setPopularTagsError(null);
             } catch {
@@ -48,7 +50,7 @@ export function TagArticlesProvider({ children }: { children: React.ReactNode })
 
             try {
                 const response = await axios.get(
-                    'https://sulat-tam.alwaysdata.net/gets/articles_by_tag.php',
+                    `${BASE_URL}/gets/articles_by_tag.php`,
                     {
                         params: { tag: currentTag, limit: tagLimit, page: tagCurrentPage },
                         withCredentials: true,
@@ -73,7 +75,7 @@ export function TagArticlesProvider({ children }: { children: React.ReactNode })
 
             try {
                 const response = await axios.get(
-                    'https://sulat-tam.alwaysdata.net/gets/articles_by_tag_count.php',
+                    `${BASE_URL}/gets/articles_by_tag_count.php`,
                     {
                         params: { tag: currentTag },
                         withCredentials: true,

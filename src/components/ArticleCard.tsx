@@ -4,6 +4,7 @@ import type { NavigateFunction } from 'react-router-dom';
 
 import { useFavoriteArticlesContext } from '../context/ArticleInfoProvider';
 import { useUserContext, useAuthContext } from '../context/UserInfoProvider';
+import BASE_URL from '../utilities/dynamicDomain';
 
 import type { PreviewArticle } from '../context/articleTypes';
 
@@ -27,7 +28,7 @@ async function handleFavorites(
     }
     try {
         await axios.post(
-            'https://sulat-tam.alwaysdata.net/updates/favorites.php',
+            `${BASE_URL}/updates/favorites.php`,
             { article_id: id },
             { withCredentials: true }
         );

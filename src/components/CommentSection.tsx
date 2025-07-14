@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import { useUserContext } from '../context/UserInfoProvider';
+import BASE_URL from '../utilities/dynamicDomain';
 
 import CommentCard from './CommentCard';
 
@@ -30,7 +31,7 @@ export default function CommentSection({ comments, setComments, articleId }: Com
         if (!articleId) return;
         try {
             const response = await axios.post(
-                'https://sulat-tam.alwaysdata.net/posts/comment.php',
+                `${BASE_URL}/posts/comment.php`,
                 {
                     article_id: articleId,
                     body: commentBody

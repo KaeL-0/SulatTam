@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import { useAuthContext, useSetUserFromStorage, useUserContext } from '../context/UserInfoProvider';
 import { useCurrentUserArticleContext, useGlobalArticleContext } from '../context/ArticleInfoProvider';
+import BASE_URL from '../utilities/dynamicDomain';
 
 import styles from '../css/form-page.module.scss';
 
@@ -28,7 +29,7 @@ export default function Settings() {
 
     async function handleLogout() {
         const response = await axios.post(
-            'https://sulat-tam.alwaysdata.net/auths/logout.php', {} ,
+            `${BASE_URL}/auths/logout.php`, {} ,
             { 
                 withCredentials: true 
             }
@@ -72,7 +73,7 @@ export default function Settings() {
 
         try {
             const response = await axios.post(
-                'https://sulat-tam.alwaysdata.net/updates/user_info.php',
+                `${BASE_URL}/updates/user_info.php`,
                 form,
                 {
                     headers: { 'Content-Type': 'multipart/form-data' },

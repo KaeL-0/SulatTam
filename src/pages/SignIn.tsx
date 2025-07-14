@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import { useAuthContext, useSetUserFromStorage } from '../context/UserInfoProvider';
 import { useFavoriteArticlesContext } from '../context/ArticleInfoProvider';
+import BASE_URL from '../utilities/dynamicDomain';
 
 import styles from '../css/form-page.module.scss';
 
@@ -39,7 +40,7 @@ export default function SignIn() {
         try {
             
             const response = await axios.post(
-                'https://sulat-tam.alwaysdata.net/auths/login.php',
+                `${BASE_URL}/auths/login.php`,
                 new URLSearchParams(formData).toString(),
                 {
                     headers: {
@@ -64,7 +65,7 @@ export default function SignIn() {
                 setIsLogin(true)
                 setIsTokenMissing(false)
                 navigate('/')
-            }, 1000)
+            }, 1200)
 
         } catch (error: any) {
             console.error('Error submitting form:', error);
