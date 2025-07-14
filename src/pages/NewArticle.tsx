@@ -122,7 +122,7 @@ export default function NewArticle() {
                     id='body' 
                     rows={7} 
                     className={`${styles.input} ${styles.textarea}`} 
-                    placeholder='Write your article (in markdown)' 
+                    placeholder='Write your article' 
                     required 
                     value={formData.body}
                     onChange={handleChange}
