@@ -65,3 +65,52 @@ nav {
     }
   }
 }
+
+@media (max-width: 480px) {
+  nav {
+    > .navBrand {
+      font-size: 1.3rem;
+    }
+
+    > ul {
+      font-size: 0.7rem;
+    }
+  }
+}
+
+
+@media (max-width: 400px) {
+  nav {
+    > .navBrand {
+      font-size: 1.2rem;
+    }
+
+    > ul {
+      font-size: 0.69rem;
+    }
+  }
+}
+
+@media (max-width: 385px) {
+  nav {
+    > .navBrand {
+      font-size: 1rem;
+    }
+
+    > ul {
+      font-size: 0.6rem;
+    }
+  }
+}
+
+@media (max-width: 345px) {
+  nav {
+    > .navBrand {
+      font-size: 0.9rem;
+    }
+
+    > ul {
+      font-size: 0.55rem;
+    }
+  }
+}
