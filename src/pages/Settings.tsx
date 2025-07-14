@@ -123,7 +123,10 @@ export default function Settings() {
                         className={styles.hiddenFileInput}
                         onChange={handleFileChange}
                     />
-                    <label htmlFor="image" className={styles.customFileInput}>
+                    <label
+                        htmlFor="image"
+                        className={`${styles.customFileInput} ${selectedFile ? styles.customFileInputSelected : ''}`}
+                    >
                         {selectedFile ? selectedFile.name : "Choose profile picture..."}
                     </label>
                 </div>
